@@ -1,4 +1,4 @@
-# Requisitos funcionais e detalhando casos de uso
+# Requisitos funcionais e detalhando e mostrando os casos de uso
 1. Requisitos funcionais
 
 **Nome** | **Descrição** |
