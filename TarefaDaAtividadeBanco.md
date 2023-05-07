@@ -1,4 +1,4 @@
-# Requisitos funcionais e detalhando e mostrando os casos de uso
+# Referente a tarefa presente no estudo de Caso do SISTEMA BANCÁRIO
 1. Requisitos funcionais
 
 **Nome** | **Descrição** |
