@@ -1,4 +1,4 @@
-# Referente a tarefa presente no estudo de Caso do SISTEMA BANCÁRIO
+# Tarefa presente no estudo de Caso do SISTEMA BANCÁRIO
 1. Requisitos funcionais
 
 **Nome** | **Descrição** |
