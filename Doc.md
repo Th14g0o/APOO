@@ -9,4 +9,4 @@ Transferir | É possivel tranferir dinheiro |
 Ver Saldo | É possivel verificar o proprio saldo |
 Depositar | É possivel depositar dinheiro |
 
-[!Caso de Uso](imgs/BancoUml.png)
+![Caso de Uso](/imgs/BancoUml.png)
