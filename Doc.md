@@ -13,7 +13,7 @@ Extrato | É possivel que o cliente emita seu extrato |
 
 2. Caso de uso
 
-<img src="imgs/BancoUml.PNG" style="width: 100%;"/>
+<img src="imgs/UmlBanco.PNG" style="width: 100%;"/>
 <!--![Caso de Uso](/imgs/BancoUml.PNG)-->
 
 3. Detalhamento
