@@ -14,7 +14,7 @@ Extrato | É possivel que o cliente emita seu extrato |
 2. Caso de uso
 
 <img src="imgs/UmlBanco.PNG" style="width: 100%;"/>
-<!--![Caso de Uso](/imgs/BancoUml.PNG)-->
+<!--![Caso de Uso](/imgs/UmlBanco.PNG)-->
 
 3. Detalhamento
 
