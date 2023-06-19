@@ -1,6 +1,6 @@
 # Projeto Rede Social (Trail)
 
-## Especificação do caso de uso - POST TRAILS
+## Especificação do caso de uso - Gerenciar perfil
 
 ### Histórico da Revisão 
 
@@ -10,11 +10,11 @@
 
 ### 1. Resumo 
 
-Este casos de uso permite que os membros da rede possam realizar suas postagens de trilhas realizadas.
+Este casos de uso permite que os usuarios possam ver e editar seu perfil.
 
 ### 2. Atores 
 
-Membros da rede
+Usuario aluno
 
 ### 3. Pré-condições
 
@@ -22,10 +22,18 @@ O usuário que vai fazer a postagem precisa estar autenticado no sistema.
 
 ### 4.Pós-condições
 
-O sistema deve disponibilizar de forma rápida as postagens para visualziação.
+O sistema deve disponibilizar de forma rápida as postagens para visualiziação.
 
 ### 5. Fluxos de evento
-#### 5.1. Fluxo Principal
+#### 5.1.1 Fluxo Principal(Ver perfil)
+|  Ator  | Sistema |
+|:-------|:------- |
+|1. O usuário aciona a funcionalidade de realizar postagem sobre a interface gráfica do sistema.||
+||2. O sistema apresenta uma interface para capturar os dados da postagem.|
+|3. O usuário preenche as informções de descrição da atividade, imagens, tipo de trilha realizada, distância percorrida, localização e dados do GPS.||
+||4. O sistema grava esses dados acrescentando a data-hora da publicação.|
+|5. O usuário visualiza sua postagem na lista de postagens. ||
+#### 5.1.2 Fluxo Principal(Editar perfil)
 |  Ator  | Sistema |
 |:-------|:------- |
 |1. O usuário aciona a funcionalidade de realizar postagem sobre a interface gráfica do sistema.||
