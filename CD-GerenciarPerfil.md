@@ -28,23 +28,25 @@ O sistema deve disponibilizar de forma rápida as postagens para visualiziação
 #### 5.1.1 Fluxo Principal(Ver perfil)
 |  Ator  | Sistema |
 |:-------|:------- |
-|1. O usuário aciona a funcionalidade de realizar postagem sobre a interface gráfica do sistema.||
-||2. O sistema apresenta uma interface para capturar os dados da postagem.|
-|3. O usuário preenche as informções de descrição da atividade, imagens, tipo de trilha realizada, distância percorrida, localização e dados do GPS.||
-||4. O sistema grava esses dados acrescentando a data-hora da publicação.|
-|5. O usuário visualiza sua postagem na lista de postagens. ||
+|1.Usuario credenciado aciona a funcionalidade de ver seu perfil.||
+||2.Disponibiliza sua bio, nome visivel, nome identificador e suas postagens de midia e texto.|
+|3. O usuario visualiza seus dados||
+#### 5.2.1 Fluxo de excessão 
+     a) Usuario não estar credenciado
+     
 #### 5.1.2 Fluxo Principal(Editar perfil)
 |  Ator  | Sistema |
 |:-------|:------- |
-|1. O usuário aciona a funcionalidade de realizar postagem sobre a interface gráfica do sistema.||
-||2. O sistema apresenta uma interface para capturar os dados da postagem.|
-|3. O usuário preenche as informções de descrição da atividade, imagens, tipo de trilha realizada, distância percorrida, localização e dados do GPS.||
-||4. O sistema grava esses dados acrescentando a data-hora da publicação.|
-|5. O usuário visualiza sua postagem na lista de postagens. ||
-
-
-#### 5.2. Fluxo de excessão 
-     a) Dados inválidos para a operação: caso o usuário tente submeter uma postagem sem imagens e tipo de trilha, o sistema deve alertá-lo e solicitar os dados novamente.
+|1. Usuario credenciado aciona a funcionalidade de editar seu perfil||
+||2. Disponibilizar um formulario com base nos dados editaveis do usuario para a edição|
+|3. O usuario podera editar sua bio, nome visivel, foto e genero, por fim, acionar a funcionalidade alterar ||
+||4. Valida os dados e manda uma mensagem de confirmações |
+|5. Usuario visualiza seu perfil editado e uma mensagem||
+ #### 5.2.2 Fluxo de excessão 
+     a) Usuario não estar credenciado
+   
+    
+    
 
 ### 6. Prototipos de Interface
 
