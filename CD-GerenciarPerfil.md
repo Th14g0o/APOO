@@ -20,8 +20,8 @@ O usuário precisa estar autenticado no sistema.
 #### 4.1 Fluxo Principal(Ver perfil)
 |  Ator  | Sistema |
 |:-------|:------- |
-|1.Usuario credenciado aciona a funcionalidade de ver seu perfil.||
-||2.Disponibiliza sua bio, nome visivel, nome identificador e suas postagens de midia e texto.|
+|1. Usuario credenciado aciona a funcionalidade de ver seu perfil.||
+||2. Disponibiliza sua bio, nome visivel, nome identificador e suas postagens de midia e texto.|
 |3. O usuario visualiza seus dados||
      
 #### 4.2 Fluxo Principal(Editar perfil)
