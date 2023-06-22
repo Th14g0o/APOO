@@ -1,4 +1,4 @@
-# Projeto Rede Social (Trail)
+# Projeto Rede Social Whisperif
 
 ## Especificação do caso de uso - Gerenciar perfil
 
