@@ -33,7 +33,7 @@ O usuário precisa estar autenticado no sistema.
 ||4. Valida os dados e manda uma mensagem de confirmações |
 |5. Usuario visualiza seu perfil editado e uma mensagem("Seu perfil foi atualizado com sucesso")||
  #### 4.2 Fluxo de excessão 
-     a)Erro na validação: nome visivel vazio e arquivo anexado não ser uma imagem
+     a) Erro na validação: nome visivel vazio e arquivo anexado não ser uma imagem
    
     
 
