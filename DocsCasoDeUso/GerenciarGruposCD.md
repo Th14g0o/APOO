@@ -15,17 +15,17 @@ Alunos
 
 ### 3. Pré-condições
 
-O usuário precisa estar autenticado no sistema.
+O usuário precisa estar autenticado no sistema, alem disso, para editar e ver, você tem que ter criado pelo menos um grupo.
 
 ### 4. Fluxos de evento
-#### 4.1 Fluxo Principal(Ver perfil)
+#### 4.1 Fluxo Principal(Criar Grupo)
 |  Ator  | Sistema |
 |:-------|:------- |
-|1. Usuario credenciado aciona a funcionalidade de ver seu perfil.||
-||2. Disponibiliza sua bio, nome visivel, nome identificador e suas postagens de midia e texto.|
+|1. Usuario credenciado aciona a funcionalidade de Criar Grupo.||
+||2. Manda um formulario com os dados de criação do grupo.|
 |3. O usuario visualiza seus dados||
      
-#### 4.2 Fluxo Principal(Editar perfil)
+#### 4.2 Fluxo Principal(Editar Grupo)
 |  Ator  | Sistema |
 |:-------|:------- |
 |1. Usuario credenciado aciona a funcionalidade de editar seu perfil||
@@ -33,6 +33,14 @@ O usuário precisa estar autenticado no sistema.
 |3. O usuario podera editar sua bio, nome visivel, foto e genero, por fim, acionar a funcionalidade alterar ||
 ||4. Valida os dados e manda uma mensagem de confirmações |
 |5. Usuario visualiza seu perfil editado e uma mensagem("Seu perfil foi atualizado com sucesso")||
+
+#### 4.3 Fluxo Principal(Ver Grupo)
+|  Ator  | Sistema |
+|:-------|:------- |
+|1. Usuario credenciado aciona a funcionalidade de ver seu perfil.||
+||2. Disponibiliza sua bio, nome visivel, nome identificador e suas postagens de midia e texto.|
+|3. O usuario visualiza seus dados||
+
  #### 4.2 Fluxo de excessão 
      a) Erro na validação: nome visivel vazio e arquivo anexado não ser uma imagem e volta para o passo numero 3
    
