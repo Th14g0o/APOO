@@ -9,36 +9,38 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Gravar</title>
+    <title>Editar</title>
 </head>
 <body>
-    @using (Html.BeginForm()) 
+    @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
         
-        <div>
+        <div >
             <h4>ItemTema</h4>
             <hr />
-            @Html.ValidationSummary(true, "")
-            <div >
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.ItemTemaId)
+    
+            <div>
                 @Html.LabelFor(model => model.nome)
                 <div >
                     @Html.EditorFor(model => model.nome)
-                    @Html.ValidationMessageFor(model => model.nome, "")
-                </div>
-            </div>
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.descricao)
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.descricao)
-                    @Html.ValidationMessageFor(model => model.descricao, "")
+                    @Html.ValidationMessageFor(model => model.nome)
                 </div>
             </div>
     
             <div >
-                <div>
-                    <input type="submit" value="Create" />
+                @Html.LabelFor(model => model.descricao)
+                <div >
+                    @Html.EditorFor(model => model.descricao)
+                    @Html.ValidationMessageFor(model => model.descricao)
+                </div>
+            </div>
+    
+            <div>
+                <div >
+                    <input type="submit" value="Save" />
                 </div>
             </div>
         </div>

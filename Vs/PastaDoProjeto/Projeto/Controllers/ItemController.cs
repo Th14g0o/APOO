@@ -22,10 +22,55 @@ namespace Projeto.Controllers
         {
             return View(new ItemTema());
         }
+        public ActionResult Ver(long id)
+        {
+            return View(Servicos.AcharPorId(id));
+        }
+        public ActionResult Editar(long id)
+        {
+            return View(Servicos.AcharPorId(id));
+        }
+        [HttpPost]
+        public ActionResult Excluir(long id)
+        {
+            ItemTema i = Servicos.AcharPorId(id);
+            bool exito = Servicos.Excluir(i);
+            if (exito)
+            {
+                TempData["Message"] = "O ITEM " + i.nome.ToUpper() + " FOI REMOVIDO";
+            }
+            else
+            {
+                TempData["Message"] = "O ITEM " + i.nome.ToUpper() + " NÂO FOI REMOVIDO COM SUCESSO";
+            }
+            return RedirectToAction("Index");
+        }
         [HttpPost]
         public ActionResult Gravar(ItemTema i )
         {
-            Servicos.Gravar(i);
+            bool exito = Servicos.Gravar(i);
+            if (exito)
+            {
+                TempData["Message"] = "O ITEM " + i.nome.ToUpper() + " FOI CADSTRADO";
+            }
+            else
+            {
+                TempData["Message"] = "O ITEM " + i.nome.ToUpper() + " NÂO FOI CADSTRADO COM SUCESSO";
+            }
+            return RedirectToAction("Index");
+        }
+        [HttpPost]
+        public ActionResult Editar(ItemTema i)
+        {
+            bool exito = Servicos.Editar(i);
+            if (exito)
+            {
+                TempData["Message"] = "O ITEM " + i.nome.ToUpper() + " FOI EDITADO";
+            }
+            else
+            {
+                TempData["Message"] = "O ITEM " + i.nome.ToUpper() + " NÂO FOI EDITADO COM SUCESSO";
+            }
             return RedirectToAction("Index");
         }
     }

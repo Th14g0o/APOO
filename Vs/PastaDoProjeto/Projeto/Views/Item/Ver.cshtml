@@ -1,0 +1,42 @@
+﻿@model Projeto.Models.ItemTema
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Ver</title>
+</head>
+<body>
+    <div>
+        <h4>ItemTema</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.nome)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.nome)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.descricao)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.descricao)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Atualizar", "Editar", new { id = Model.ItemTemaId }) |
+        @Html.ActionLink("Voltar a listagem de itens", "Index")
+    </p>
+</body>
+</html>

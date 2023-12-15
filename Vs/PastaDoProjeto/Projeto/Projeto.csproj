@@ -95,6 +95,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="conteudos\estilos\qualquer.css" />
+    <Content Include="conteudos\scripts\modal.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -102,7 +104,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Context\EFContext.cs" />
     <Compile Include="Controllers\ItemController.cs" />
-    <Compile Include="Controllers\TemaController.cs" />
     <Compile Include="DAL\ItemDAL.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -116,6 +117,9 @@
     <None Include="packages.config" />
     <Content Include="Views\Item\Gravar.cshtml" />
     <Content Include="Views\Item\Index.cshtml" />
+    <Content Include="Views\Item\Editar.cshtml" />
+    <Content Include="Views\Item\Ver.cshtml" />
+    <Content Include="Views\Item\ModalExcluir.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -125,7 +129,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Tema\" />
+    <Folder Include="estilos\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

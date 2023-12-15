@@ -14,9 +14,21 @@ namespace Projeto.Servico
         {
             return Dal.Listar();
         }
+        public ItemTema AcharPorId(long id)
+        {
+            return Dal.Achar(id);
+        }
         public bool Gravar(ItemTema i)
         {
             return Dal.Gravar(i);
+        }
+        public bool Editar(ItemTema i)
+        {
+            return Dal.Editar(i);
+        }
+        public bool Excluir(ItemTema i)
+        {
+            return Dal.Excluir(i);
         }
     }
 }

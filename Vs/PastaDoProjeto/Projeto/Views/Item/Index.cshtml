@@ -10,13 +10,20 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
+    <link rel="stylesheet" href="~/conteudos/estilos/qualquer.css"/>
+    <script src="~/conteudos/scripts/modal.js"></script>
 </head>
 <body>
     <p>
         @Html.ActionLink("Create New", "Gravar")
-        @* == <a href="Item/Create">Create New</a> *@
     </p>
-    <table class="table">
+    <span>
+        @if (@TempData["Message"] != null)
+        {
+            @TempData["Message"]
+        }
+    </span>
+    <table >
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.nome)
@@ -28,6 +35,7 @@
         </tr>
     
     @foreach (var item in Model) {
+        string idForm = "Item" + @item.ItemTemaId.ToString();
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.nome)
@@ -36,9 +44,24 @@
                 @Html.DisplayFor(modelItem => item.descricao)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.ItemTemaId }) |
-                @Html.ActionLink("Details", "Details", new { id=item.ItemTemaId }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.ItemTemaId })
+                @Html.ActionLink("Atualizar", "Editar", new { id=item.ItemTemaId }) |
+                @Html.ActionLink("Visualizar", "Ver", new { id=item.ItemTemaId }) |
+            </td>
+            <td>
+
+                <a href="javascript:AbrirModal('@idForm')">Remover</a>
+
+                @using (Html.BeginForm("Excluir", "Item", FormMethod.Post,
+                new { enctype = "multipart/form-data", id = idForm, @class = "ModalModelo" }))
+                {
+
+                    @Html.AntiForgeryToken()
+                    <input hidden name="id" value="@item.ItemTemaId" />
+                    <span>Tem certeza?</span>
+                    <a href="javascript:FecharModal('@idForm')">Não, não desejo excluir</a>
+                    <input type="submit" value="Sim, desejo excluir" />
+
+                }
             </td>
         </tr>
     }
