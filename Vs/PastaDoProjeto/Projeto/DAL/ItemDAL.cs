@@ -13,7 +13,7 @@ namespace Projeto.DAL
         public EFContext Banco = new EFContext();
         public List<ItemTema> Listar()
         {
-            return Banco.Itens.OrderBy(c => c.nome).ToList();
+            return Banco.Itens.OrderBy(c => c.ItemTemaId).ToList();
         }
         public ItemTema Achar(long id)
         {

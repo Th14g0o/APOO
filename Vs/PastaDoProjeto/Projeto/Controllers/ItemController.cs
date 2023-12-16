@@ -24,6 +24,7 @@ namespace Projeto.Controllers
         }
         public ActionResult Ver(long id)
         {
+
             return View(Servicos.AcharPorId(id));
         }
         public ActionResult Editar(long id)

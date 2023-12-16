@@ -13,23 +13,31 @@
     <link rel="stylesheet" href="~/conteudos/estilos/qualquer.css"/>
     <script src="~/conteudos/scripts/modal.js"></script>
 </head>
-<body>
-    <p>
-        @Html.ActionLink("Create New", "Gravar")
-    </p>
-    <span>
+<body id="HtmlIndexItemTema">
+
+        <a href="@Url.Action("Gravar")">
+            Adicionar novo item tematico
+           
+            <b>+</b>
+        </a>
+        
+  
+    
         @if (@TempData["Message"] != null)
         {
-            @TempData["Message"]
+            <span class="SystemMsg">
+                @TempData["Message"]
+            </span>
         }
-    </span>
-    <table >
+
+
+    <table>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.nome)
+            <th class="ThBorda">
+                Nome
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.descricao)
+            <th class="ThBorda">
+                Descrição
             </th>
             <th></th>
         </tr>
@@ -37,19 +45,21 @@
     @foreach (var item in Model) {
         string idForm = "Item" + @item.ItemTemaId.ToString();
         <tr>
-            <td>
+            <td class="TdBorda">
                 @Html.DisplayFor(modelItem => item.nome)
             </td>
-            <td>
+            <td class="TdBorda">
                 @Html.DisplayFor(modelItem => item.descricao)
             </td>
             <td>
-                @Html.ActionLink("Atualizar", "Editar", new { id=item.ItemTemaId }) |
-                @Html.ActionLink("Visualizar", "Ver", new { id=item.ItemTemaId }) |
-            </td>
-            <td>
+                @Html.ActionLink("Atualizar", "Editar", new { id = item.ItemTemaId }, new {@class = "ActionBt Azul" }) 
+                @Html.ActionLink("Visualizar", "Ver", new { id = item.ItemTemaId }, new { @class = "ActionBt Verde" }) 
 
-                <a href="javascript:AbrirModal('@idForm')">Remover</a>
+                <a class="ActionBt Vermelho" href="javascript:AbrirModal('@idForm')">
+                    Remover
+
+
+                </a>
 
                 @using (Html.BeginForm("Excluir", "Item", FormMethod.Post,
                 new { enctype = "multipart/form-data", id = idForm, @class = "ModalModelo" }))
