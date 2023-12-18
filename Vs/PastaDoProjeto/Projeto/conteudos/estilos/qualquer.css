@@ -82,6 +82,9 @@ form.ModalModelo > a{
     border-left: 2px solid grey;
     border-right: 2px solid grey;
 }
+.BordaBaixa {
+    border-bottom: 2px solid grey;
+}
 .TdBorda {
     border: 2px solid grey;
 }
