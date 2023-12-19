@@ -1,0 +1,83 @@
+﻿@model Projeto.Models.Aluguel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Gravar</title>
+    <link rel="stylesheet" href="~/conteudos/estilos/qualquer.css" />
+    <script src="~/conteudos/scripts/modal.js"></script>
+</head>
+<body class="FormSalvarItem">
+    <p><a id="AbrirMenu" href="javascript:AbrirMenu('Menu', 'AbrirMenu')">☰</a></p>
+    <header id="Menu">
+        <p>
+            <b>Links</b>
+            <a href="javascript:FecharMenu('Menu', 'AbrirMenu')">X</a>
+        </p>
+        <ol>
+            <li><a class="LinkSelecionado" href="@Url.Action("Index", "Tema")">Tema</a></li>
+            <li><a href="@Url.Action("Index", "Item")">Itens tematicos</a></li>
+            <li><a href="@Url.Action("Index", "Cliente")">Clientes</a></li>
+            <li><a href="@Url.Action("Index", "Aluguel")">Alugueis</a></li>
+        </ol>
+    </header>
+    <main>
+        <section>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+            <div>
+                <h1>Alugando tema</h1>
+                <hr />
+                @Html.ValidationSummary(true, "")
+               <div class="UmaLinhaInp">
+                    Valor:
+                    <div>
+                       <input type="number" min="1" step="any" name="valor" />
+                    </div>
+                </div>
+                <div class="UmaLinhaInp">
+                    Data da Festa:
+                    <div>
+                        @Html.TextBoxFor(model => model.DataFesta, new { required = "required", type="date" })
+                        @Html.ValidationMessageFor(model => model.DataFesta, "")
+                    </div>
+                </div>
+                <div class="UmaLinhaInp">
+                    Inicio:
+                    <div>
+                        @Html.TextBoxFor(model => model.HorarioInicio, new { required = "required", type = "time" })
+                        @Html.ValidationMessageFor(model => model.HorarioInicio, "")
+                    </div>
+                </div>
+                <div class="UmaLinhaInp">
+                    Termino: 
+                    <div>
+                        @Html.TextBoxFor(model => model.HorarioTermino, new { required = "required", type = "time" })
+                        @Html.ValidationMessageFor(model => model.HorarioTermino, "")
+                    </div>
+                </div>
+
+                <div>
+                    <div>
+                        <input type="submit" value="Criar" class="ActionBt Verde" />
+                    </div>
+                </div>
+            </div>
+            }
+
+            <div>
+                @Html.ActionLink("Voltar a listagem de alugueis", "Index", null, new { @class = "ActionBt Vermelho" })
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

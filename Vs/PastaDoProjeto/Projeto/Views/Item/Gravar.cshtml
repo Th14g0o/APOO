@@ -11,42 +11,61 @@
     <meta name="viewport" content="width=device-width" />
     <title>Gravar</title>
     <link rel="stylesheet" href="~/conteudos/estilos/qualquer.css" />
+    <script src="~/conteudos/scripts/modal.js"></script>
 </head>
 <body class="FormSalvarItem">
-    @using (Html.BeginForm()) 
-    {
-        @Html.AntiForgeryToken()
-        
-        <div>
-            <h1>Criando item tematico</h1>
-            <hr />
-            @Html.ValidationSummary(true, "")
-            <div class="UmaLinhaInp">
-                 Nome:
-                <div >
-                    @Html.TextBoxFor(model => model.nome)
-                    @Html.ValidationMessageFor(model => model.nome, "")
-                </div>
-            </div>
-    
-            <div class="form-group">
-                Descrição:
-                <div class="col-md-10">
-                    @Html.TextAreaFor(model => model.descricao)
-                    @Html.ValidationMessageFor(model => model.descricao, "")
-                </div>
-            </div>
-    
-            <div >
+    <p><a id="AbrirMenu" href="javascript:AbrirMenu('Menu', 'AbrirMenu')">☰</a></p>
+    <header id="Menu">
+        <p>
+            <b>Links</b>
+            <a href="javascript:FecharMenu('Menu', 'AbrirMenu')">X</a>
+        </p>
+        <ol>
+            <li><a href="@Url.Action("Index", "Tema")">Tema</a></li>
+            <li><a class="LinkSelecionado" href="@Url.Action("Index", "Item")">Itens tematicos</a></li>
+            <li><a href="@Url.Action("Index", "Cliente")">Clientes</a></li>
+            <li><a href="@Url.Action("Index", "Aluguel")">Alugueis</a></li>
+        </ol>
+    </header>
+    <main>
+        <section>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
                 <div>
-                    <input type="submit" value="Criar" class="ActionBt Verde"/>
+                    <h1>Criando item tematico</h1>
+                    <hr />
+                    @Html.ValidationSummary(true, "")
+                    <div class="UmaLinhaInp">
+                        Nome:
+                        <div>
+                            @Html.TextBoxFor(model => model.nome, new { required = "required" })
+                            @Html.ValidationMessageFor(model => model.nome, "")
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        Descrição:
+                        <div class="col-md-10">
+                            @Html.TextAreaFor(model => model.descricao, new { required = "required" })
+                            @Html.ValidationMessageFor(model => model.descricao, "")
+                        </div>
+                    </div>
+
+                    <div>
+                        <div>
+                            <input type="submit" value="Criar" class="ActionBt Verde" />
+                        </div>
+                    </div>
                 </div>
+            }
+
+            <div>
+                @Html.ActionLink("Voltar a listagem de itens", "Index", null, new { @class = "ActionBt Vermelho" })
             </div>
-        </div>
-    }
-    
-    <div>
-        @Html.ActionLink("Voltar a listagem de itens", "Index", null, new { @class = "ActionBt Vermelho" })
-    </div>
+        </section>
+    </main>
+
 </body>
 </html>

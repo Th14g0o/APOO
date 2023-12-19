@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Projeto.Models.ItemTema>
+﻿@model IEnumerable<Projeto.Models.Tema>
 
 @{
     Layout = null;
@@ -10,7 +10,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
-    <link rel="stylesheet" href="~/conteudos/estilos/qualquer.css"/>
+    <link rel="stylesheet" href="~/conteudos/estilos/qualquer.css" />
     <script src="~/conteudos/scripts/modal.js"></script>
 
 </head>
@@ -22,8 +22,8 @@
             <a href="javascript:FecharMenu('Menu', 'AbrirMenu')">X</a>
         </p>
         <ol>
-            <li><a href="@Url.Action("Index", "Tema")">Tema</a></li>
-            <li><a class="LinkSelecionado" href="@Url.Action("Index", "Item")">Itens tematicos</a></li>
+            <li><a class="LinkSelecionado" href="@Url.Action("Index", "Tema")">Tema</a></li>
+            <li><a href="@Url.Action("Index", "Item")">Itens tematicos</a></li>
             <li><a href="@Url.Action("Index", "Cliente")">Clientes</a></li>
             <li><a href="@Url.Action("Index", "Aluguel")">Alugueis</a></li>
         </ol>
@@ -31,7 +31,7 @@
     <main>
         <section>
             <a href="@Url.Action("Gravar")">
-                Adicionar novo item tematico
+                Adicionar novo tema
 
                 <b>+</b>
             </a>
@@ -54,7 +54,10 @@
                             Nome
                         </th>
                         <th class="ThBorda BordaBaixa">
-                            Descrição
+                            Cor
+                        </th>
+                        <th class="ThBorda BordaBaixa">
+                            Valor(R$)
                         </th>
                         <th></th>
                     </tr>
@@ -66,7 +69,10 @@
                             Nome
                         </th>
                         <th class="ThBorda">
-                            Descrição
+                            Cor
+                        </th>
+                        <th class="ThBorda">
+                            Valor(R$)
                         </th>
                         <th></th>
                     </tr>
@@ -75,17 +81,20 @@
 
                 @foreach (var item in Model)
                 {
-                    string idForm = "Item" + @item.ItemTemaId.ToString();
+                    string idForm = "Item" + @item.TemaId.ToString();
                     <tr>
                         <td class="TdBorda">
-                            @Html.DisplayFor(modelItem => item.nome)
+                            @Html.DisplayFor(modelItem => item.Nome)
                         </td>
                         <td class="TdBorda">
-                            @Html.DisplayFor(modelItem => item.descricao)
+                            @Html.DisplayFor(modelItem => item.Cor)
+                        </td>
+                        <td class="TdBorda">
+                            @Html.DisplayFor(modelItem => item.ValorAluguel)
                         </td>
                         <td>
-                            @Html.ActionLink("Atualizar", "Editar", new { id = item.ItemTemaId }, new { @class = "ActionBt Azul" })
-                            @Html.ActionLink("Visualizar", "Ver", new { id = item.ItemTemaId }, new { @class = "ActionBt Verde" })
+                            @Html.ActionLink("Atualizar", "Editar", new { id = item.TemaId }, new { @class = "ActionBt Azul" })
+                            @Html.ActionLink("Visualizar", "Ver", new { id = item.TemaId }, new { @class = "ActionBt Verde" })
 
                             <a class="ActionBt Vermelho" href="javascript:AbrirModal('@idForm')">
                                 Remover
@@ -93,12 +102,12 @@
 
                             </a>
 
-                            @using (Html.BeginForm("Excluir", "Item", FormMethod.Post,
+                            @using (Html.BeginForm("Excluir", "Tema", FormMethod.Post,
                             new { enctype = "multipart/form-data", id = idForm, @class = "ModalModelo" }))
                             {
 
                                 @Html.AntiForgeryToken()
-                                <input hidden name="id" value="@item.ItemTemaId" />
+                                <input hidden name="id" value="@item.TemaId" />
                                 <span>Tem certeza?</span>
                                 <a href="javascript:FecharModal('@idForm')">Não, não desejo excluir</a>
                                 <input type="submit" value="Sim, desejo excluir" />
